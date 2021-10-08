@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +27,20 @@ use Illuminate\Support\Facades\Route;
 
 // Using controller
 
+// To welcome page
 Route::get('/', [WelcomeController::class, 'index']);
 
+// To blog page
+Route::get('/blog', [BlogController::class, 'index']);
 
 
+// To single blog post
+Route::get('/blog/single-blog-post', [BlogController::class, 'show']);
+
+// To about page
+Route::get('/about', function(){
+    return view('about');
+});
+
+// To contact page
+Route::get('/contact', [ContactController::class, 'index']);
