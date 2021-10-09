@@ -28,19 +28,19 @@ use Illuminate\Support\Facades\Route;
 // Using controller
 
 // To welcome page
-Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 
 // To blog page
-Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 
 
 // To single blog post
-Route::get('/blog/single-blog-post', [BlogController::class, 'show']);
+Route::get('/blog/single-blog-post', [BlogController::class, 'show'])->name('blog.show');
 
 // To about page
 Route::get('/about', function(){
     return view('about');
-});
+})->name('about');
 
 // To contact page
-Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
