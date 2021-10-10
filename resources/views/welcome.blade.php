@@ -5,7 +5,7 @@
     <header class="header" style=" background-image: url({{asset("images/photography.jpg")}});">
       <div class="header-text">
         <h1>Alphayo Blog</h1>
-        <h4>Home of verified news...</h4>
+        <h4>Dashboard of verified news...</h4>
       </div>
       <div class="overlay"></div>
     </header>

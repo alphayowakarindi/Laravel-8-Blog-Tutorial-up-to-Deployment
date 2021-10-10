@@ -44,3 +44,9 @@ Route::get('/about', function(){
 
 // To contact page
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
