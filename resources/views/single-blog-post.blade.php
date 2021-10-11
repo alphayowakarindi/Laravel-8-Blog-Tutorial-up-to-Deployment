@@ -4,7 +4,7 @@
     <!-- main -->
     <main class="container">
       <section class="single-blog-post">
-        <h1>Benefits of paul's photography</h1>
+        <h1>Benefits of Covid Vaccination</h1>
 
         <p class="time-and-author">
           2 hours ago
