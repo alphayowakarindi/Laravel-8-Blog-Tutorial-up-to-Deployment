@@ -13,7 +13,7 @@
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    @yield('head')
 
 </head>
 
@@ -91,9 +91,7 @@
                 document.querySelector(".sidebar").style.width = "0";
             });
     </script>
-    <script>
-        CKEDITOR.replace( 'body' );
-</script>
+@yield('scripts')
 </body>
 
 </html>
