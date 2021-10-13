@@ -15,9 +15,12 @@ class BlogController extends Controller
     }
 
     public function store(Request $request){
-       $title = $request->input('title');
+       $request->validate([
+           'title' => 'required'
+       ]);
 
-       dd($title);
+
+       dd('Validation passed. You can now request the input');
     }
 
     public function show(){
