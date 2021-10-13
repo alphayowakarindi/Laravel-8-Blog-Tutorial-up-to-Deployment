@@ -14,7 +14,11 @@ class BlogController extends Controller
         return view('blogPosts.create-blog-post');
     }
 
- 
+    public function store(Request $request){
+       $title = $request->input('title');
+
+       dd($title);
+    }
 
     public function show(){
         return view('blogPosts.single-blog-post');

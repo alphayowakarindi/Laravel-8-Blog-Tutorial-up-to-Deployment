@@ -40,6 +40,10 @@ Route::get('/blog/single-blog-post', [BlogController::class, 'show'])->name('blo
 // To create blog post
 Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
 
+
+// To store blog post to the DB
+Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
+
 // To about page
 Route::get('/about', function(){
     return view('about');
