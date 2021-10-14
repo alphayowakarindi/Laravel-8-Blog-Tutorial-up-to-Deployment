@@ -27,7 +27,10 @@ class BlogController extends Controller
        $slug = Str::slug($title, '-');
        $user_id = Auth::user()->id;
        $body = $request->input('body');
-    
+
+       //File upload
+       $imagePath = 'storage/' . $request->file('image')->store('postsImages', 'public');
+
        
        dd('Validation passed. You can now request the input');
     }
