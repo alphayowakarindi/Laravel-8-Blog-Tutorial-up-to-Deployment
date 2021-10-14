@@ -14,15 +14,24 @@
                 <!-- Title -->
                 <label for="title"><span>Title</span></label>
                 <input type="text" id="title" name="title" />
-        
+                @error('title')
+                {{-- The $attributeValue field is/must be $validationRule --}}
+                    <p style="color: red; margin-bottom:25px;">{{$message}}</p>
+                @enderror
                 <!-- Image -->
                 <label for="image"><span>Image</span></label>
                 <input type="file" id="image" name="image" />
-             
+                @error('image')
+                {{-- The $attributeValue field is/must be $validationRule --}}
+                    <p style="color: red; margin-bottom:25px;">{{$message}}</p>
+                @enderror
                 <!-- Body-->
                 <label for="body"><span>Body</span></label>
                 <textarea id="body" name="body"></textarea>
-              
+                @error('body')
+                {{-- The $attributeValue field is/must be $validationRule --}}
+                    <p style="color: red; margin-bottom:25px;">{{$message}}</p>
+                @enderror
                 <!-- Button -->
                 <input type="submit" value="Submit" />
             </form>
