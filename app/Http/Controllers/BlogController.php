@@ -41,7 +41,7 @@ class BlogController extends Controller
 
        $post->save();
        
-       return redirect()->back();
+       return redirect()->back()->with('status', 'Post Created Successfully');
     }
 
     public function show(){
