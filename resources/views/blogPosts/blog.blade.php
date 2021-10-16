@@ -23,71 +23,20 @@
         </ul>
       </div>
       <section class="cards-blog latest-blog">
-        <div class="card-blog-content">
-          <img src="{{asset('images/pic1.jpg')}}" alt="" />
-          <p>
-            2 hours ago
-            <span>Written By Alphayo Wakarindi</span>
-          </p>
-          <h4>
-            <a href="{{route('blog.show')}}">Benefits of getting covid 19 vaccination</a>
-          </h4>
-        </div>
+        
 
-        <div class="card-blog-content">
-          <img src="{{asset('images/pic2.jpg')}}" alt="" />
-          <p>
-            23 hours ago
-            <span>Written By Alphayo Wakarindi</span>
-          </p>
-          <h4 style="font-weight: bolder">
-            <a href="{{route('blog.show')}}">Top 10 Music Stories Never Told</a>
-          </h4>
-        </div>
-
-        <div class="card-blog-content">
-          <img src="{{asset('images/pic3.jpg')}}" alt="" />
-          <p>
-            2 days ago
-            <span>Written By Alphayo Wakarindi</span>
-          </p>
-          <h4 style="font-weight: bolder">
-            <a href="{{route('blog.show')}}">WRC Safari Rally Back To Kenya After 19 Years</a>
-          </h4>
-        </div>
-
-        <div class="card-blog-content">
-          <img src="{{asset('images/pic4.jpg')}}" alt="" />
-          <p>
-            3 days ago
-            <span>Written By Alphayo Wakarindi</span>
-          </p>
-          <h4 style="font-weight: bolder">
-            <a href="{{route('blog.show')}}">Premier League 2021/2022 Fixtures</a>
-          </h4>
-        </div>
-
-        <div class="card-blog-content">
-          <img src="{{asset('images/pic5.jpg')}}" alt="" />
-          <p>
-            2 weeks ago
-            <span>Written By Alphayo Wakarindi</span>
-          </p>
-          <h4 style="font-weight: bolder">
-            <a href="{{route('blog.show')}}">12 Health Benefits Of Pomegranate Fruit</a>
-          </h4>
-        </div>
-
-        <div class="card-blog-content">
-          <img src="{{asset('images/pic6.jpg')}}" alt="" />
-          <p>
-            1 month ago
-            <span>Written By Alphayo Wakarindi</span>
-          </p>
-          <h4 style="font-weight: bolder">
-            <a href="{{route('blog.show')}}">Nairobi, The Only City In The World With A National Park</a>
-          </h4>
-        </div>
+     @foreach ($posts as $post )
+     <div class="card-blog-content">
+      <img src="{{asset($post->imagePath)}}" alt="" />
+      <p>
+        {{$post->created_at->diffForHumans()}}
+        <span>Written By {{$post->user->name}}</span>
+      </p>
+      <h4>
+        <a href="{{route('blog.show', $post)}}">{{$post->title}}</a>
+      </h4>
+    </div>
+     @endforeach
 
         <!-- pagination -->
         <div class="pagination" id="pagination">

@@ -6,10 +6,10 @@
     <main class="container" style="background-color: #fff;">
         <section id="contact-us">
             <h1 style="padding-top: 50px;">Create New Post!</h1>
-            @if (session('flash'))
+            @if (session('status'))
                 <p
                     style="color: #fff; width:100%;font-size:18px;font-weight:600;text-align:center;background:#5cb85c;padding:17px 0;margin-bottom:6px;">
-                    {{ session('flash') }}</p>
+                    {{ session('status') }}</p>
             @endif
 
             <!-- Contact Form -->
