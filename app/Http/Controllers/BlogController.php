@@ -26,7 +26,9 @@ class BlogController extends Controller
        ]);
        
        $title = $request->input('title');
-       $slug = Str::slug($title, '-');
+
+       $postId = Post::latest()->take(1)->first()->id + 1;
+       $slug = Str::slug($title, '-') . '-' . $postId;
        $user_id = Auth::user()->id;
        $body = $request->input('body');
 
