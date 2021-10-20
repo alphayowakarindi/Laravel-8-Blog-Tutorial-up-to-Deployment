@@ -40,6 +40,12 @@ Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create
 Route::get('/blog/{post:slug}', [BlogController::class, 'show'])->name('blog.show');
 
 
+// To edit single blog post
+Route::get('/blog/{post}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+
+// To update single blog post
+Route::put('/blog/{post}/update', [BlogController::class, 'update'])->name('blog.update');
+
 // To store blog post to the DB
 Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
 
