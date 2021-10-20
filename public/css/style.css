@@ -275,6 +275,29 @@ footer small {
   color: black;
 }
 
+.post-buttons {
+  display: flex;
+}
+
+.post-buttons a {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  margin-right: 10px;
+  color: #fff;
+  margin-bottom: 7px;
+  display: inline-block;
+}
+
+.post-buttons input {
+  padding: 10px 13px;
+  background-color: red;
+  color: #fff;
+  margin-bottom: 7px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 /* Single Blog */
 .single-blog-post h1 {
   text-align: center;

@@ -23,8 +23,6 @@
             </ul>
         </div>
         <section class="cards-blog latest-blog">
-
-
             @foreach ($posts as $post)
                 <div class="card-blog-content">
                     <img src="{{ asset($post->imagePath) }}" alt="" />
