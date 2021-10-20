@@ -4,6 +4,11 @@
     <!-- main -->
     <main class="container">
         <h2 class="header-title">All Blog Posts</h2>
+        @if (session('status'))
+            <p
+                style="color: #fff; width:100%;font-size:18px;font-weight:600;text-align:center;background:#5cb85c;padding:17px 0;margin-bottom:6px;">
+                {{ session('status') }}</p>
+        @endif
         <div class="searchbar">
             <form action="">
                 <input type="text" placeholder="Search..." name="search" />
@@ -26,14 +31,16 @@
             @foreach ($posts as $post)
                 <div class="card-blog-content">
                     @auth
-                    @if (auth()->user()->id === $post->user->id)
-                    <div class="post-buttons">
-                        <a href="{{route('blog.edit', $post)}}">Edit</a>
-                        <form action="" method="">
-                            <input type="submit" value=" Delete">
-                        </form>
-                    </div>
-                    @endif
+                        @if (auth()->user()->id === $post->user->id)
+                            <div class="post-buttons">
+                                <a href="{{ route('blog.edit', $post) }}">Edit</a>
+                                <form action="{{ route('blog.delete', $post) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="submit" value=" Delete">
+                                </form>
+                            </div>
+                        @endif
                     @endauth
                     <img src="{{ asset($post->imagePath) }}" alt="" />
                     <p>
