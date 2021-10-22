@@ -254,7 +254,7 @@ footer small {
   display: inline-block;
 }
 
-#pagination {
+.pagination {
   margin: 3rem 3rem;
 }
 
