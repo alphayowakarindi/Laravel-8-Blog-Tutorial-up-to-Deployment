@@ -212,6 +212,23 @@ footer small {
   display: inline-block;
 }
 
+.create-categories a,
+.index-categories a {
+    all: revert;
+    margin: 20px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.create-categories a span,
+.index-categories a span {
+    font-size: 22px;
+}
+
+.index-categories {
+    text-align: center;
+}
+
 .header-title {
   text-align: center;
   margin: 80px 0 40px 0;
