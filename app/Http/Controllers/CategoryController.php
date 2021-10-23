@@ -68,7 +68,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit-category', compact('category'));
     }
 
     /**
@@ -80,7 +80,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required | unique:categories',
+        ]);
+        
+        $name = $request->input('name');
+       
+        $category->name = $name;
+
+        $category->save();
+        
+        return redirect(route('categories.index'))->with('status', 'Category Edited Successfully');
     }
 
     /**
