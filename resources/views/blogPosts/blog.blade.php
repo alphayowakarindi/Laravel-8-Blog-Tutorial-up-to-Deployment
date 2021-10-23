@@ -21,10 +21,9 @@
         </div>
         <div class="categories">
             <ul>
-                <li><a href="">Health</a></li>
-                <li><a href="">Entertainment</a></li>
-                <li><a href="">Sports</a></li>
-                <li><a href="">Nature</a></li>
+                @foreach ($categories as $category)
+                    <li><a href="">{{ $category->name }}</a></li>
+                @endforeach
             </ul>
         </div>
         <section class="cards-blog latest-blog">
@@ -51,13 +50,13 @@
                         <a href="{{ route('blog.show', $post) }}">{{ $post->title }}</a>
                     </h4>
                 </div>
-                @empty
+            @empty
                 <p>Sorry, currently there is no blog post related to that search!</p>
             @endforelse
 
         </section>
         <!-- pagination -->
 
-        {{$posts->links('pagination::default')}}
+        {{ $posts->links('pagination::default') }}
         <br>
     @endsection
