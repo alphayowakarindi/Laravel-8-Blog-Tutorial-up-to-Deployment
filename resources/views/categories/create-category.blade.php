@@ -29,7 +29,7 @@
                 </form>
             </div>
             <div class="create-categories">
-                <a href="">Categories list <span>&#8594;</span></a>
+                <a href="{{route('categories.index')}}">Categories list <span>&#8594;</span></a>
             </div>
         </section>
     </main>
