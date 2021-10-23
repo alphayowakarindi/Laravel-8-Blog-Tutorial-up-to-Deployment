@@ -4,11 +4,7 @@
     <!-- main -->
     <main class="container">
         <h2 class="header-title">All Blog Posts</h2>
-        @if (session('status'))
-            <p
-                style="color: #fff; width:100%;font-size:18px;font-weight:600;text-align:center;background:#5cb85c;padding:17px 0;margin-bottom:6px;">
-                {{ session('status') }}</p>
-        @endif
+       @include('includes.flash-message')
         <div class="searchbar">
             <form action="">
                 <input type="text" placeholder="Search..." name="search" />
