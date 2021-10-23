@@ -14,7 +14,9 @@
                 <div>
                     <a href="{{ route('categories.edit', $category) }}">Edit</a>
                 </div>
-                <form action="" method="">
+                <form action="{{route('categories.destroy', $category)}}" method="post">
+                    @method('delete')
+                    @csrf
                     <input type="submit" value="Delete">
                 </form>
             </div>
